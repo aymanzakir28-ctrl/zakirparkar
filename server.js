@@ -3,6 +3,19 @@ const https = require('https');
 const tls = require('tls');
 const fs = require('fs');
 const path = require('path');
+
+// Use Vercel's writable /tmp folder in production, or local folder during development
+const dataDir = process.env.VERCEL 
+  ? path.join('/tmp', 'data') 
+  : path.join(__dirname, 'data');
+
+try {
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+} catch (err) {
+  console.warn('Could not create data directory:', err.message);
+}
 const crypto = require('crypto');
 const { URL } = require('url');
 
