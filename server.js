@@ -11,7 +11,7 @@ loadDotEnv(path.join(__dirname, '.env'));
 const PORT = Number(process.env.PORT || 3000);
 const ROOT = __dirname;
 const PUBLIC_DIR = path.join(ROOT, 'public');
-const DATA_DIR = path.join(ROOT, 'data');
+const DATA_DIR = process.env.VERCEL ? path.join('/tmp', 'data') : path.join(ROOT, 'data');
 const DATA_FILE = path.join(DATA_DIR, 'appointments.json');
 
 const DEFAULT_SLOTS = [
