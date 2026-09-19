@@ -1,0 +1,14 @@
+{
+  "name": "zakir-parkar-architecture-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio and appointment website for Zakir Parkar.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}
